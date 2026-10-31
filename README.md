@@ -22,6 +22,8 @@ Abre `http://localhost:4173` en el navegador. No hay dependencias que instalar. 
 
 Esta versión permite elegir francés o preuniversitario, seleccionar una habilidad y practicar con preguntas de muestra. La **práctica** explica cada respuesta inmediatamente; **Quiero probarme** reserva el feedback para el final; el **mini simulacro** hace lo mismo y añade un temporizador de muestra de cinco minutos. El historial se guarda en el almacenamiento local del navegador, en el dispositivo donde se usa. La comprensión oral usa la voz sintética disponible en el navegador y puede variar según el equipo. Speaking, evaluación de pronunciación, IA, sincronización entre dispositivos y un examen oficial aún no están implementados.
 
+![Vista móvil de la primera app funcional](docs/app-movil.png)
+
 ![Vista general del cascarón](docs/preview.png)
 
 ## Recorrido incluido
