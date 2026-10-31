@@ -1,6 +1,6 @@
 # Aprende Pe! — contexto para Claude Code
 
-Este repositorio documenta una idea de producto en exploración. **Todavía no contiene una app funcional.** Antes de proponer cambios, lee `docs/traspaso-claude-code.md`, `README.md`, `docs/vision.md`, `docs/cascaron.md` y `docs/decisiones.md`.
+Este repositorio contiene una **primera app web funcional de demostración** y un diseño Figma editable. La app no tiene backend, cuentas, IA conectada ni contenido revisado por docentes. Antes de proponer cambios, lee `README.md`, `docs/vision.md`, `docs/cascaron.md`, `docs/decisiones.md` y `docs/traspaso-claude-code.md`.
 
 ## Cómo colaborar en este proyecto
 
@@ -14,7 +14,7 @@ Este repositorio documenta una idea de producto en exploración. **Todavía no c
 - Para idiomas, separa comprensión oral, lectura, escritura, producción e interacción oral. La transcripción por sí sola no evalúa pronunciación.
 - Para preuniversitario, versiona universidad, proceso, modalidad, área, carrera, curso, tema, habilidad y dificultad. No anuncies cobertura de un examen ni reglas actuales sin verificar fuentes oficiales.
 - Prefiere una prueba móvil de alcance pequeño; el producto final puede atender celular y laptop. El diseño actual es editable en Figma y contiene contenido de muestra.
-- No anuncies integración de IA, audio, puntuación real, evidencia de aprendizaje, demanda ni ingresos mientras no se hayan implementado o medido.
+- No anuncies integración de IA, speaking evaluado, puntuación oficial, evidencia de aprendizaje, demanda ni ingresos mientras no se hayan implementado o medido. El listening actual usa voz sintética del navegador y necesita validación de calidad.
 - Registra decisiones nuevas en `docs/decisiones.md` y tareas de colaboración en GitHub Issues. No reemplaces el Figma como fuente de diseño sin acordarlo con el usuario.
 
 ## Enlaces principales
@@ -25,3 +25,7 @@ Este repositorio documenta una idea de producto en exploración. **Todavía no c
 - Comparación para elegir MVP: https://github.com/MarcoPorras123/aprende-pe/issues/2
 
 El enlace de Figma permite ver el archivo; editarlo requiere acceso de Figma aparte. El chat compartido es una copia fija, así que este repositorio registra las decisiones posteriores.
+
+## Primera implementación
+
+`web/` contiene una aplicación móvil adaptable a laptop, con preguntas de demostración, corrección según modo y progreso guardado en `localStorage`. `server.mjs` sirve archivos estáticos y `npm test` verifica la lógica de selección, evaluación y resumen. Ejecuta `npm run dev` y abre `http://localhost:4173` para probarla. No hay dependencias externas de npm.

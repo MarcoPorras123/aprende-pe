@@ -26,4 +26,4 @@ Este es un diseño conceptual de celular. Sus capas de texto, tarjetas, botones 
 
 ## Alcance real de este archivo
 
-El Figma es un **cascarón visual editable**. Los controles representan el recorrido deseado, pero no hacen llamadas a servicios ni guardan respuestas. Cuando se elija el primer público construiremos un prototipo funcional de esa ruta.
+El Figma es un **cascarón visual editable**. Sus controles representan el recorrido deseado, pero no hacen llamadas a servicios ni guardan respuestas. La primera app web de demostración del repositorio ya permite recorrer ambas rutas con preguntas de muestra; cuando se elija el primer público se profundizarán su contenido y evaluación.

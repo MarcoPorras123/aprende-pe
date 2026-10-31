@@ -1,6 +1,6 @@
 # Traspaso de Aprende Pe! a Claude Code
 
-**Fecha de este traspaso:** 31 de octubre de 2026. Este documento reúne la memoria **pertinente a Aprende Pe!** y el estado observable del proyecto para continuar sin reconstruir el contexto desde cero. La memoria de otras tareas personales no pertenece a este repositorio.
+**Fecha de este traspaso:** 31 de octubre de 2026. Este documento reúne la memoria **pertinente a Aprende Pe!** y el estado observable del proyecto para continuar sin reconstruir el contexto desde cero. La memoria de otras tareas personales no pertenece a este repositorio. Ese mismo día se añadió la primera app web funcional de demostración; consulta el README y la sección 9 para el estado más reciente.
 
 ## 1. Qué quiere construir Marco
 
@@ -20,7 +20,7 @@ El nombre elegido por el usuario es **Aprende Pe!**. Su socio en GitHub es **Art
 | Chat de origen | Enlace público a una copia fija de la conversación hasta el 25 de octubre de 2026 | https://chatgpt.com/s/cx_6ade98bc0c008191878a751a42fa2afa |
 | Issues | Revisión del cascarón y comparación del primer MVP | https://github.com/MarcoPorras123/aprende-pe/issues/1 y https://github.com/MarcoPorras123/aprende-pe/issues/2 |
 
-**No hay app ejecutable, backend, banco de preguntas validado, audio funcional, puntuación real ni conexión con una API de IA.** El Figma representa el recorrido deseado y usa ejemplos. `docs/preview.png` permite verlo sin abrir Figma. El enlace público de Figma no concede edición a terceros; para editarlo se requiere una invitación en Figma.
+**Sí hay una primera app web ejecutable de demostración.** No hay backend, banco de preguntas validado, evaluación de speaking, puntuación oficial ni conexión con una API de IA. El listening usa voz sintética del navegador; no son audios revisados. El Figma representa el recorrido visual y usa ejemplos. `docs/preview.png` permite verlo sin abrir Figma. El enlace público de Figma no concede edición a terceros; para editarlo se requiere una invitación en Figma.
 
 La documentación existente se distribuye así:
 
@@ -89,6 +89,10 @@ Al modificar el producto, registrar decisiones en `docs/decisiones.md`, actualiz
 
 ### Primer mensaje sugerido para Claude Code
 
-> Lee `CLAUDE.md`, `README.md`, `docs/traspaso-claude-code.md`, `docs/vision.md`, `docs/cascaron.md` y `docs/decisiones.md`. Este repositorio es Aprende Pe!, un proyecto en exploración con Figma y dos posibles públicos: francés y preuniversitario peruano. Revisa también los issues #1 y #2. Resume en español qué está hecho, qué sigue sin validar y propón una secuencia breve para revisar el cascarón con mi socio y comparar las dos rutas antes de decidir el MVP. No afirmes que ya existe una app funcional ni empieces a implementar hasta que acordemos el primer alcance.
+> Lee `CLAUDE.md`, `README.md`, `docs/traspaso-claude-code.md`, `docs/vision.md`, `docs/cascaron.md` y `docs/decisiones.md`. Revisa la app de demostración en `web/`, ejecuta `npm test` y observa los issues #1 y #2. Resume en español qué funciona, qué sigue sin validar y propone el siguiente incremento pequeño para comparar francés y preuniversitario antes de elegir el MVP completo. Distingue claramente el feedback basado en claves de la futura integración de IA.
+
+## 9. Primera app funcional de demostración
+
+En `web/` se implementó una app sin dependencias de npm: selección de ruta y habilidad, práctica con feedback inmediato, diagnóstico breve con feedback al final, mini simulacro de muestra de cinco minutos, resumen por habilidad e historial local. La ruta de francés contiene gramática, lectura y escucha mediante voz sintética del navegador; la preuniversitaria contiene biología de muestra. Las preguntas no están validadas por docentes ni representan exámenes oficiales. La lógica pura está en `web/engine.js` y los datos de ejemplo en `web/questions.js`; `npm test` comprueba selección, evaluación y resumen. Ejecuta `npm run dev` y abre `http://localhost:4173`.
 
 Este documento resume la memoria del proyecto. El chat público enlazado arriba permite consultar la conversación original hasta la fecha en que se compartió; las decisiones nuevas deben registrarse en este repositorio para que Claude Code pueda recuperarlas después.
