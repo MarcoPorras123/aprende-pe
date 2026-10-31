@@ -2,12 +2,13 @@
 
 Aprende Pe! es una idea de app para estudiantes: plantea una meta, practica con ejercicios, explica errores y vuelve a comprobar el progreso. Estamos comparando dos primeras rutas —idiomas y preparación preuniversitaria— antes de elegir el primer producto completo.
 
-**Estado (23 de octubre de 2026):** cascarón editable en Figma. Las preguntas, resultados y tiempos son ejemplos; aún no hay app ejecutable, audio funcional ni corrección mediante IA.
+**Estado (31 de octubre de 2026):** cascarón editable en Figma y documentación de traspaso a Claude Code. Las preguntas, resultados y tiempos son ejemplos; aún no hay app ejecutable, audio funcional ni corrección mediante IA.
 
 - [Abrir el diseño editable en Figma](https://www.figma.com/design/WlPe9XTto9rt2RxsDeuJQ5)
 - [Leer la visión y la evaluación de viabilidad](docs/vision.md)
 - [Revisar las pantallas y lo que representan](docs/cascaron.md)
 - [Ver decisiones y preguntas abiertas](docs/decisiones.md)
+- [Continuar el proyecto en Claude Code](docs/traspaso-claude-code.md)
 
 ![Vista general del cascarón](docs/preview.png)
 
