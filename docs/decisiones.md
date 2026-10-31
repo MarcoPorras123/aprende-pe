@@ -16,8 +16,15 @@ Actualizado el 31 de octubre de 2026.
 
 - Se construyó una **app web funcional de demostración**, adaptable a celular y laptop, para recorrer ambas rutas antes de elegir cuál profundizar. Esta decisión no cambia la necesidad de elegir un primer público para el MVP completo.
 - La app tiene preguntas originales de muestra, práctica con explicación inmediata, diagnóstico breve sin pistas, mini simulacro de cinco minutos y progreso local. El listening usa voz sintética del navegador.
-- La app **no** tiene IA conectada, speaking corregido, contenido validado por docentes, cuentas ni sincronización. Tampoco representa reglas oficiales de admisión o un nivel MCER certificado.
-- El historial se guarda solo en el navegador del dispositivo; puede perderse si se borran los datos del sitio.
+- La primera versión guardaba el historial en el navegador. Ese comportamiento fue reemplazado por la v0.2 descrita abajo.
+
+## Segunda iteración ejecutable v0.2 (31 de octubre de 2026)
+
+- El usuario pidió comenzar la construcción tangible. Se añadió una API que controla intentos, corrección y tiempo; el navegador ya no recibe la clave de respuesta antes de contestar.
+- El servidor guarda perfiles de invitado, respuestas y resultados en un archivo local excluido de Git. La cookie identifica al navegador, y las sesiones incompletas se pueden retomar tras recargar.
+- Se añadieron manifiesto, iconos y archivos de PWA para probar la instalación local en navegadores compatibles. La caché no permite contestar sin servidor.
+- Esta es una **beta local**, sin cuentas recuperables, sincronización, despliegue público, IA conectada, speaking evaluado ni banco validado por docentes. Tampoco representa reglas oficiales de admisión o un nivel MCER certificado.
+- En el siguiente incremento conviene revisar contenido con docentes, definir el primer objetivo evaluable y añadir cuentas/sincronización para pruebas con estudiantes externos. La integración de IA debe basarse en claves y rúbricas revisadas y mantenerse del lado del servidor.
 
 ## Por decidir con el socio
 

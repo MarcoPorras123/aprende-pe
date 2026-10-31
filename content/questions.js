@@ -102,8 +102,3 @@ export const questions = [
     nextStep: 'Compara la composición básica de ADN y ARN.',
   },
 ];
-
-export const routes = {
-  frances: { label: 'Francés', eyebrow: 'RUTA · IDIOMAS', subtitle: 'Gramática, lectura y escucha de muestra', icon: 'FR' },
-  preuni: { label: 'Preuniversitario', eyebrow: 'RUTA · ADMISIÓN', subtitle: 'Biología de muestra para explorar el flujo', icon: 'UN' },
-};

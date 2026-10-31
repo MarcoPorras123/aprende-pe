@@ -1,6 +1,4 @@
+data/*.json
+data/*.tmp
 node_modules/
-coverage/
 .env
-.env.*
-!.env.example
-.DS_Store

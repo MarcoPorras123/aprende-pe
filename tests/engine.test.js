@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { questions } from '../web/questions.js';
+import { questions } from '../content/questions.js';
 import { selectQuestions, evaluate, shouldShowImmediateFeedback, summarize } from '../web/engine.js';
 
 test('la práctica filtra por ruta y habilidad; el diagnóstico mezcla las disponibles', () => {
@@ -14,7 +14,7 @@ test('la práctica filtra por ruta y habilidad; el diagnóstico mezcla las dispo
   assert.equal(selectQuestions(questions, 'otra', 'practica').length, 0);
 });
 
-test('una clave revisada determina el acierto y se rechazan respuestas inválidas', () => {
+test('la clave del banco determina el acierto y se rechazan respuestas inválidas', () => {
   const question = questions[0];
   assert.equal(evaluate(question, question.correctIndex).correct, true);
   assert.equal(evaluate(question, 0).correct, false);

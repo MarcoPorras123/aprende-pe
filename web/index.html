@@ -4,13 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f7f5">
-  <meta name="description" content="Aprende Pe!: práctica guiada de demostración para francés y preuniversitario.">
+  <meta name="description" content="Aprende Pe!: practica francés y biología, revisa tus errores y sigue tu progreso.">
   <title>Aprende Pe! · Aprende con un plan</title>
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <div id="app"></div>
   <script type="module" src="/app.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});</script>
 </body>
 </html>

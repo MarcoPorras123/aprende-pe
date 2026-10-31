@@ -1,6 +1,6 @@
 # Traspaso de Aprende Pe! a Claude Code
 
-**Fecha de este traspaso:** 31 de octubre de 2026. Este documento reúne la memoria **pertinente a Aprende Pe!** y el estado observable del proyecto para continuar sin reconstruir el contexto desde cero. La memoria de otras tareas personales no pertenece a este repositorio. Ese mismo día se añadió la primera app web funcional de demostración; consulta el README y la sección 9 para el estado más reciente.
+**Fecha de este traspaso:** 31 de octubre de 2026. Este documento reúne la memoria **pertinente a Aprende Pe!** y el estado observable del proyecto para continuar sin reconstruir el contexto desde cero. La memoria de otras tareas personales no pertenece a este repositorio. El estado técnico más reciente está en el README y la sección 10 de este documento.
 
 ## 1. Qué quiere construir Marco
 
@@ -20,7 +20,7 @@ El nombre elegido por el usuario es **Aprende Pe!**. Su socio en GitHub es **Art
 | Chat de origen | Enlace público a una copia fija de la conversación hasta el 25 de octubre de 2026 | https://chatgpt.com/s/cx_6ade98bc0c008191878a751a42fa2afa |
 | Issues | Revisión del cascarón y comparación del primer MVP | https://github.com/MarcoPorras123/aprende-pe/issues/1 y https://github.com/MarcoPorras123/aprende-pe/issues/2 |
 
-**Sí hay una primera app web ejecutable de demostración.** No hay backend, banco de preguntas validado, evaluación de speaking, puntuación oficial ni conexión con una API de IA. El listening usa voz sintética del navegador; no son audios revisados. El Figma representa el recorrido visual y usa ejemplos. `docs/preview.png` permite verlo sin abrir Figma. El enlace público de Figma no concede edición a terceros; para editarlo se requiere una invitación en Figma.
+**Hay una app web beta v0.2 con servidor, API y persistencia local de intentos.** No hay banco de preguntas validado, cuentas recuperables, sincronización, evaluación de speaking, puntuación oficial ni conexión con una API de IA. El listening usa voz sintética del navegador; no son audios revisados. El Figma representa el recorrido visual y usa ejemplos. `docs/preview.png` permite verlo sin abrir Figma. El enlace público de Figma no concede edición a terceros; para editarlo se requiere una invitación en Figma.
 
 La documentación existente se distribuye así:
 
@@ -67,9 +67,9 @@ Para preguntas cerradas, una clave aprobada gobierna la calificación. La IA pue
 
 **Ninguna ruta fue elegida.** Se propusieron pilotos exploratorios de dos semanas, con unos 10–15 estudiantes por ruta y un docente por dominio. Medir finalización, retorno voluntario, aplicación del feedback en preguntas nuevas, desacuerdo del docente, latencia/costo por sesión y aceptación de una oferta concreta de pago. Son metas de investigación, no pruebas ya realizadas.
 
-## 6. Arquitectura propuesta, todavía sin implementar
+## 6. Arquitectura propuesta, implementada parcialmente
 
-Interfaz móvil (una PWA podría servir para una prueba inicial en celular y laptop) → backend que controla intentos y guarda la clave de API → banco de contenido revisado y versionado → servicios de IA para explicación y adaptación → feedback estructurado → registro de próxima práctica. El micrófono web requiere HTTPS, permiso del usuario y pruebas en dispositivos reales.
+Interfaz móvil PWA → servidor local que controla intentos y guarda los resultados → banco de contenido revisado y versionado → servicios de IA para explicación y adaptación → feedback estructurado → registro de próxima práctica. La interfaz, el servidor local y el guardado de intentos ya existen en v0.2. La revisión docente, las cuentas y la IA siguen pendientes. El micrófono web requiere HTTPS, permiso del usuario y pruebas en dispositivos reales.
 
 La voz en tiempo real continua es una opción futura, no un requisito del primer piloto. Antes de elegir proveedor o modelo, revisar precios, disponibilidad y calidad actuales. Los importes mencionados en `docs/vision.md` son **ejemplos calculados el 23 de octubre de 2026**, no presupuesto final ni resultado de pruebas pagadas.
 
@@ -83,16 +83,20 @@ La voz en tiempo real continua es una opción futura, no un requisito del primer
 
 ## 8. Cómo retomar el trabajo con Marco y su socio
 
-Primero, leer este archivo y los cuatro documentos de producto, observar el Figma y revisar los issues. Luego presentar un resumen corto del estado, las preguntas pendientes y **una propuesta de siguiente paso concreto**. El siguiente paso natural es revisar el cascarón con Marco y Artanis1510 y preparar la comparación de ambos públicos; no asumir una arquitectura definitiva ni construir una app extensa antes de esa decisión.
+Primero, leer este archivo y los cuatro documentos de producto, observar el Figma y revisar los issues. Luego presentar un resumen corto del estado, las preguntas pendientes y **una propuesta de siguiente paso concreto**. Marco pidió avanzar de un cascarón a una app tangible, así que la v0.2 ya tiene un servidor local. Continúa con incrementos verificables mientras se comparan ambos públicos; no asumas una ruta única ni cobertura oficial antes de validarla.
 
 Al modificar el producto, registrar decisiones en `docs/decisiones.md`, actualizar el README si cambia el estado real y abrir o comentar issues para que el socio vea el avance. Distinguir siempre prototipo, código funcional y evidencia obtenida con usuarios.
 
 ### Primer mensaje sugerido para Claude Code
 
-> Lee `CLAUDE.md`, `README.md`, `docs/traspaso-claude-code.md`, `docs/vision.md`, `docs/cascaron.md` y `docs/decisiones.md`. Revisa la app de demostración en `web/`, ejecuta `npm test` y observa los issues #1 y #2. Resume en español qué funciona, qué sigue sin validar y propone el siguiente incremento pequeño para comparar francés y preuniversitario antes de elegir el MVP completo. Distingue claramente el feedback basado en claves de la futura integración de IA.
+> Lee `CLAUDE.md`, `README.md`, `docs/traspaso-claude-code.md`, `docs/vision.md`, `docs/cascaron.md` y `docs/decisiones.md`. Ejecuta `npm test`, abre la app v0.2 y observa los issues #1 y #2. Resume en español qué funciona, qué sigue sin validar y propone el siguiente incremento para construir el producto mientras se comparan francés y preuniversitario. Distingue claramente el feedback basado en claves de la futura integración de IA.
 
 ## 9. Primera app funcional de demostración
 
-En `web/` se implementó una app sin dependencias de npm: selección de ruta y habilidad, práctica con feedback inmediato, diagnóstico breve con feedback al final, mini simulacro de muestra de cinco minutos, resumen por habilidad e historial local. La ruta de francés contiene gramática, lectura y escucha mediante voz sintética del navegador; la preuniversitaria contiene biología de muestra. Las preguntas no están validadas por docentes ni representan exámenes oficiales. La lógica pura está en `web/engine.js` y los datos de ejemplo en `web/questions.js`; `npm test` comprueba selección, evaluación y resumen. Ejecuta `npm run dev` y abre `http://localhost:4173`.
+En la primera versión se implementó una app sin dependencias de npm: selección de ruta y habilidad, práctica con feedback inmediato, diagnóstico breve con feedback al final, mini simulacro de muestra de cinco minutos, resumen por habilidad e historial en `localStorage`. La ruta de francés contenía gramática, lectura y escucha mediante voz sintética del navegador; la preuniversitaria, biología de muestra. Las preguntas no están validadas por docentes ni representan exámenes oficiales. La lógica pura sigue en `web/engine.js`; las preguntas pasaron de `web/questions.js` a `content/questions.js` en v0.2 para no servir las claves al navegador.
 
-Este documento resume la memoria del proyecto. El chat público enlazado arriba permite consultar la conversación original hasta la fecha en que se compartió; las decisiones nuevas deben registrarse en este repositorio para que Claude Code pueda recuperarlas después.
+## 10. Construcción tangible v0.2
+
+`server.mjs` sirve la interfaz y la API; `lib/api.mjs` crea perfiles de invitado y sesiones, valida el orden de respuestas y controla el tiempo del mini simulacro. `lib/store.mjs` guarda de forma atómica el archivo `data/aprende-pe.json`, que está excluido de Git. `content/questions.js` contiene las claves y no es un recurso público. `web/app.js` consulta la API; la práctica explica cada respuesta y los otros modos muestran las explicaciones al final. El historial se recupera tras reiniciar el servidor. Hay manifiesto, iconos y service worker para probar instalación local, pero la API no funciona sin servidor y el teléfono requiere un despliegue HTTPS para acceso propio. `npm test` verifica la separación de modos, la ocultación de claves y la persistencia. La captura actual está en `docs/app-real-v02.png`.
+
+La versión inicial descrita en la sección 9 se conserva como antecedente histórico. El chat público enlazado arriba permite consultar la conversación original hasta la fecha en que se compartió; las decisiones nuevas deben registrarse en este repositorio para que Claude Code pueda recuperarlas después.

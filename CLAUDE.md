@@ -1,6 +1,6 @@
 # Aprende Pe! — contexto para Claude Code
 
-Este repositorio contiene una **primera app web funcional de demostración** y un diseño Figma editable. La app no tiene backend, cuentas, IA conectada ni contenido revisado por docentes. Antes de proponer cambios, lee `README.md`, `docs/vision.md`, `docs/cascaron.md`, `docs/decisiones.md` y `docs/traspaso-claude-code.md`.
+Este repositorio contiene una **app web beta ejecutable v0.2** con API, persistencia local en el servidor y un diseño Figma editable. La app no tiene cuentas, sincronización, IA conectada ni contenido revisado por docentes. Antes de proponer cambios, lee `README.md`, `docs/vision.md`, `docs/cascaron.md`, `docs/decisiones.md` y `docs/traspaso-claude-code.md`.
 
 ## Cómo colaborar en este proyecto
 
@@ -10,11 +10,12 @@ Este repositorio contiene una **primera app web funcional de demostración** y u
 - La promesa de producto es: «Un entrenador que identifica las habilidades que necesitas para tu objetivo, te explica tus errores y organiza una práctica que comprueba si los superaste».
 - Separa **diagnóstico** (sin pistas; resultados al terminar), **práctica** (feedback tras responder y nuevo intento) y **simulacro** (tiempo y reglas del examen; explicación al final).
 - Una respuesta incorrecta aislada no demuestra una falencia estable. Para inferirla, reúne más evidencia con preguntas equivalentes o de seguimiento.
-- En preguntas cerradas, usa una clave y solución revisadas por docentes para calificar; la IA puede explicar y adaptar. Las respuestas abiertas requieren rúbricas y validación humana.
+- En preguntas cerradas, usa una clave y solución revisadas por docentes antes de presentar resultados como evaluación fiable; la IA puede explicar y adaptar. El banco actual está pendiente de esa revisión. Las respuestas abiertas requieren rúbricas y validación humana.
 - Para idiomas, separa comprensión oral, lectura, escritura, producción e interacción oral. La transcripción por sí sola no evalúa pronunciación.
 - Para preuniversitario, versiona universidad, proceso, modalidad, área, carrera, curso, tema, habilidad y dificultad. No anuncies cobertura de un examen ni reglas actuales sin verificar fuentes oficiales.
 - Prefiere una prueba móvil de alcance pequeño; el producto final puede atender celular y laptop. El diseño actual es editable en Figma y contiene contenido de muestra.
 - No anuncies integración de IA, speaking evaluado, puntuación oficial, evidencia de aprendizaje, demanda ni ingresos mientras no se hayan implementado o medido. El listening actual usa voz sintética del navegador y necesita validación de calidad.
+- La app se puede ejecutar localmente con `npm run dev` y probar con `npm test`. El perfil de invitado usa una cookie y el servidor guarda `data/aprende-pe.json`, excluido de Git. No publiques ese archivo ni claves de API. Si aparece `EADDRINUSE`, comprueba si ya hay una copia del servidor en el puerto 4173 antes de iniciar otra.
 - Registra decisiones nuevas en `docs/decisiones.md` y tareas de colaboración en GitHub Issues. No reemplaces el Figma como fuente de diseño sin acordarlo con el usuario.
 
 ## Enlaces principales
@@ -26,6 +27,6 @@ Este repositorio contiene una **primera app web funcional de demostración** y u
 
 El enlace de Figma permite ver el archivo; editarlo requiere acceso de Figma aparte. El chat compartido es una copia fija, así que este repositorio registra las decisiones posteriores.
 
-## Primera implementación
+## Implementación actual
 
-`web/` contiene una aplicación móvil adaptable a laptop, con preguntas de demostración, corrección según modo y progreso guardado en `localStorage`. `server.mjs` sirve archivos estáticos y `npm test` verifica la lógica de selección, evaluación y resumen. Ejecuta `npm run dev` y abre `http://localhost:4173` para probarla. No hay dependencias externas de npm.
+`web/` contiene la interfaz adaptable y los archivos PWA. `server.mjs` sirve archivos y enruta `/api/*` a `lib/api.mjs`; `lib/store.mjs` persiste perfiles e intentos en un archivo local mediante escritura atómica. `content/questions.js` mantiene las claves fuera de la carpeta pública. La API controla el modo de corrección y el tiempo del mini simulacro. `npm test` cubre evaluación, persistencia, ocultación de claves y separación de modos. No hay dependencias externas de npm. El siguiente incremento debe abordar contenido revisado y una forma segura de recuperar cuentas/sincronizar antes de invitar a estudiantes externos.
