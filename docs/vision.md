@@ -1,5 +1,7 @@
 # Aprende Pe! — visión de producto
 
+> Antecedente de producto. El usuario concretó después una app Flutter para Android/iOS con tres áreas. El estado actual y los límites de implementación están en [avances v0.4](avances-v04.md) y [README](../README.md); las cifras y propuestas históricas de este documento no se han revalidado en esta entrega.
+
 **La idea es técnicamente viable como una aplicación de práctica guiada con diagnóstico y corrección mediante IA.** Su valor dependerá de que el estudiante entienda sus errores, reciba una siguiente actividad útil y compruebe después que puede resolver algo parecido sin ayuda. La conexión con una API ya tiene soluciones disponibles; la calidad del contenido, la evaluación y el uso repetido requieren validación propia. Idiomas y preparación preuniversitaria pueden compartir un motor educativo, aunque necesitan contenidos y reglas de evaluación distintos. Como quieres comparar ambas rutas antes de elegir, proponemos dos pruebas pequeñas con estudiantes y docentes, seguidas por la construcción de un solo primer producto. Este informe distingue las capacidades documentadas de los proveedores de las decisiones de diseño y las hipótesis comerciales que todavía debemos probar.
 
 ## La experiencia debe cerrar el ciclo de mejora
