@@ -1,6 +1,18 @@
 # Decisiones y preguntas abiertas
 
-Actualizado el 31 de octubre de 2026.
+Actualizado el 5 de noviembre de 2026. Las decisiones de noviembre siguientes actualizan el alcance; las secciones de octubre se conservan como antecedentes.
+
+## Decisiones vigentes — noviembre de 2026
+
+- El usuario pidió una aplicación **Flutter para Android e iOS**. El cliente vive en `mobile/` y comparte el backend Node.js de la raíz.
+- Áreas: idiomas (inglés/francés), preuniversitario y universitario. Modos independientes: evaluación, práctica de tema y simulacro general. La elección comercial de un primer público sigue pendiente de validación.
+- La configuración permite 3/6/10 preguntas, metas de 70/80/90% y 5/10/20 minutos en simulacro. No hay promoción automática por alcanzar el 80%.
+- Se excluyen preguntas de muestra ya asignadas al perfil y se conservan resultados inmutables. Si se agota el banco, se pide ampliar el alcance.
+- La IA se integra solo en el servidor: generación estructurada, revisión automática separada y explicación contextual. La primera solicitud real fue rechazada por saldo; no se considera validada la generación/tutoría real.
+- La muestra y la IA se identifican por separado. No se anuncian niveles certificados, dominios estables de un tema ni cobertura oficial.
+- Se compiló Android y se preparó iOS; falta la validación completa nativa y el proceso de publicación. El destino Flutter web sirve para revisar el mismo código.
+- El audio de ensayo de la web no se ha portado a Flutter. La evaluación de voz, las rúbricas abiertas, los modelos oficiales, las cuentas y la infraestructura de producción siguen pendientes.
+- Véanse [README](../README.md) y [avances v0.4](avances-v04.md) para implementación, ejecución y evidencia actuales. El Figma previo se conserva como referencia; no se ha actualizado con la interfaz Flutter.
 
 ## Decisiones tomadas
 
@@ -32,7 +44,7 @@ Actualizado el 31 de octubre de 2026.
 2. ¿Cuál será el primer objetivo concreto: nivel y tarea de francés, o universidad, área y curso de admisión?
 3. ¿Qué partes del cascarón sobran, faltan o necesitan otra secuencia?
 4. ¿Qué prueba permitiría observar si alguien entiende y aplica una corrección varios días después?
-5. ¿Será necesario publicar una app en tiendas desde la primera prueba o bastará una experiencia móvil accesible por enlace?
+5. ¿Cuándo estará lista la validación y la infraestructura para publicar la app Flutter solicitada en tiendas?
 
 ## Siguientes avances
 

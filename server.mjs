@@ -4,6 +4,7 @@ import { resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createStore } from './lib/store.mjs';
 import { handleApi } from './lib/api.mjs';
+import { handleLearningApi } from './lib/learning-api.mjs';
 
 const base = fileURLToPath(new URL('./', import.meta.url));
 const root = resolve(base, 'web');
@@ -19,6 +20,7 @@ export async function createApp({ dataFile = resolve(base, 'data', 'aprende-pe.j
     let pathname;
     try { pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname); }
     catch { response.writeHead(400).end('Ruta no válida'); return; }
+    if (pathname.startsWith('/api/v3/')) return handleLearningApi(request, response, pathname, store);
     if (pathname.startsWith('/api/')) return handleApi(request, response, pathname, store);
     if (request.method !== 'GET' && request.method !== 'HEAD') {
       response.writeHead(405, { Allow: 'GET, HEAD' }).end(); return;
@@ -39,7 +41,7 @@ export async function createApp({ dataFile = resolve(base, 'data', 'aprende-pe.j
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const port = Number(process.env.PORT) || 4173;
+  const port = Number(process.env.PORT) || 4174;
   const host = process.env.HOST || '127.0.0.1';
   const dataFile = process.env.DATA_FILE ? resolve(base, process.env.DATA_FILE) : resolve(base, 'data', 'aprende-pe.json');
   const app = await createApp({ dataFile });

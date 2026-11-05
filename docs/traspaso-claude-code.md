@@ -1,5 +1,7 @@
 # Traspaso de Aprende Pe! a Claude Code
 
+> Actualización del 5 de noviembre de 2026: este documento conserva el traspaso histórico de v0.2. Para el estado vigente (Flutter Android/iOS, API v3 y adaptador IA), consultar [README](../README.md), [CLAUDE.md](../CLAUDE.md), [avances v0.4](avances-v04.md) y [decisiones](decisiones.md).
+
 **Fecha de este traspaso:** 31 de octubre de 2026. Este documento reúne la memoria **pertinente a Aprende Pe!** y el estado observable del proyecto para continuar sin reconstruir el contexto desde cero. La memoria de otras tareas personales no pertenece a este repositorio. El estado técnico más reciente está en el README y la sección 10 de este documento.
 
 ## 1. Qué quiere construir Marco

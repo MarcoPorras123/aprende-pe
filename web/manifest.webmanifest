@@ -1,12 +1,12 @@
 {
   "name": "Aprende Pe!",
   "short_name": "Aprende Pe!",
-  "description": "Practica francés y biología, revisa tus errores y sigue tu progreso.",
+  "description": "Evalúate, practica un tema y prepárate para tu próximo reto.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#f4f7f5",
-  "theme_color": "#198779",
+  "background_color": "#f6f8f7",
+  "theme_color": "#197465",
   "icons": [
     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
